@@ -151,10 +151,21 @@ export function PropertyDetailsPage() {
           <PropertyOverview property={property} />
 
           <DetailSection title="Description">
-            <p>{property.description}</p>
+            {property.longDescription?.length > 0 ? (
+              <div className="property-copy-stack">
+                {property.longDescription.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            ) : (
+              <p>{property.description}</p>
+            )}
           </DetailSection>
 
           <PropertyFacts property={property} />
+
+          <PropertyListSection title="Project Highlights" items={property.projectHighlights} />
+          <PropertyListSection title="Unit Type & Size" items={property.unitTypes} />
 
           <DetailSection title="Amenities">
             <div className="premium-amenities">
@@ -166,9 +177,13 @@ export function PropertyDetailsPage() {
             </div>
           </DetailSection>
 
+          <PropertyListSection title="Social Hub & Lifestyle Amenities" items={property.socialHubAmenities} />
+
           <DetailSection title="Verification & Legal Note">
             <p>{property.legalNote || property.reraNumber || property.rera || 'Verification assistance available.'}</p>
           </DetailSection>
+
+          <PropertyListSection title="Location Advantages" items={property.locationAdvantages} icon={MapPin} />
 
           {property.nearbyPlaces?.length > 0 && (
             <DetailSection title="Nearby Places">
@@ -249,6 +264,10 @@ function PropertyFacts({ property }) {
     ['Parking', property.parking],
     ['Age of Property', property.ageOfProperty],
     ['Possession', property.possessionStatus],
+    ['Project Area', property.projectArea],
+    ['Towers', property.towers],
+    ['Total Units', property.totalUnits],
+    ['Completion', property.completion],
     ['Facing', property.facing],
     ['Floor', property.floorNumber && property.totalFloors ? `${property.floorNumber} of ${property.totalFloors}` : property.floorNumber],
   ].filter(([, value]) => value)
@@ -304,8 +323,8 @@ function VideoTour({ videoUrl, title }) {
 
 function PropertyOverview({ property }) {
   const overview = [
-    ['Bedrooms', property.bedrooms || 'NA', BedDouble],
-    ['Bathrooms', property.bathrooms || 'NA', Bath],
+    ['Bedrooms', property.bedroomLabel || property.bedrooms || 'NA', BedDouble],
+    ['Bathrooms', property.bathroomLabel || property.bathrooms || 'NA', Bath],
     ['Area', property.size, Ruler],
     ['Property Type', property.type, Building2],
   ]
@@ -329,6 +348,22 @@ function DetailSection({ title, children }) {
       <h2>{title}</h2>
       {children}
     </section>
+  )
+}
+
+function PropertyListSection({ title, items, icon: Icon = Check }) {
+  if (!items?.length) return null
+
+  return (
+    <DetailSection title={title}>
+      <div className="premium-amenities property-list-grid">
+        {items.map((item) => (
+          <span key={item}>
+            <Icon size={16} /> {item}
+          </span>
+        ))}
+      </div>
+    </DetailSection>
   )
 }
 

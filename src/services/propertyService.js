@@ -25,11 +25,33 @@ const writeStoredProperties = (properties) => {
   safeStorage.set(STORAGE_KEYS.properties, properties.map(normalizeProperty))
 }
 
+const mergeSeedUpdates = (storedProperties) =>
+  storedProperties.map((storedProperty) => {
+    const seedProperty = seedProperties.find((property) => property.slug === storedProperty.slug)
+
+    if (storedProperty.slug === 'rosewood-by-trimont' && seedProperty && !storedProperty.longDescription) {
+      return normalizeProperty({ ...storedProperty, ...seedProperty, id: storedProperty.id })
+    }
+
+    return normalizeProperty(storedProperty)
+  })
+
 const ensureSeededProperties = () => {
   const storedProperties = readStoredProperties()
 
   if (storedProperties.length > 0) {
-    return storedProperties.map(normalizeProperty)
+    const storedSlugs = new Set(storedProperties.map((property) => property.slug))
+    const missingSeedProperties = seedProperties.filter((property) => !storedSlugs.has(property.slug))
+
+    if (missingSeedProperties.length > 0) {
+      const mergedProperties = mergeSeedUpdates([...missingSeedProperties, ...storedProperties])
+      writeStoredProperties(mergedProperties)
+      return mergedProperties
+    }
+
+    const updatedProperties = mergeSeedUpdates(storedProperties)
+    writeStoredProperties(updatedProperties)
+    return updatedProperties
   }
 
   const seededProperties = seedProperties.map(normalizeProperty)

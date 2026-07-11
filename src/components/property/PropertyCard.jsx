@@ -71,14 +71,14 @@ export const PropertyCard = memo(function PropertyCard({ property, compact = fal
           <span>
             <Building2 size={16} /> {property.type}
           </span>
-          {property.bedrooms > 0 && (
+          {(property.bedroomLabel || property.bedrooms > 0) && (
             <span>
-              <BedDouble size={16} /> {property.bedrooms} Beds
+              <BedDouble size={16} /> {property.bedroomLabel || `${property.bedrooms} Beds`}
             </span>
           )}
-          {property.bathrooms > 0 && (
+          {(property.bathroomLabel || property.bathrooms > 0) && (
             <span>
-              <Bath size={16} /> {property.bathrooms} Baths
+              <Bath size={16} /> {property.bathroomLabel || `${property.bathrooms} Baths`}
             </span>
           )}
           <span>{property.size}</span>

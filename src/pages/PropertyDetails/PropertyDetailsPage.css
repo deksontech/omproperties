@@ -130,8 +130,17 @@
 .property-detail-actions,
 .property-share-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+}
+
+.property-share-actions .button,
+.property-detail-actions .button {
+  min-width: 0;
+  padding-right: 12px;
+  padding-left: 12px;
+  font-size: 0.86rem;
+  white-space: nowrap;
 }
 
 .property-facts-grid {
@@ -261,6 +270,15 @@
   font-size: 1.02rem;
 }
 
+.property-copy-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.property-copy-stack p {
+  margin: 0;
+}
+
 .premium-amenities {
   display: flex;
   flex-wrap: wrap;
@@ -277,6 +295,12 @@
   border: 1px solid var(--detail-border);
   border-radius: 999px;
   font-weight: 800;
+}
+
+.property-list-grid span {
+  align-items: flex-start;
+  border-radius: 16px;
+  line-height: 1.45;
 }
 
 .premium-location-panel {
@@ -466,6 +490,11 @@
 
   .premium-contact-card .cta-stack {
     display: none;
+  }
+
+  .property-share-actions,
+  .property-detail-actions {
+    grid-template-columns: 1fr;
   }
 
 }

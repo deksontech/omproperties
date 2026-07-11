@@ -6,7 +6,7 @@ export const TrustBadges = memo(function TrustBadges({ compact = false }) {
     <div className={compact ? 'public-trust-badges compact' : 'public-trust-badges'}>
       {trustBadges.map(([label, Icon]) => (
         <span key={label}>
-          <Icon size={18} /> {label}
+          <Icon size={15} /> {label}
         </span>
       ))}
     </div>

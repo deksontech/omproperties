@@ -342,6 +342,8 @@
   border: 1px solid transparent;
   border-radius: 999px;
   font-weight: 850;
+  line-height: 1;
+  white-space: nowrap;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -658,8 +660,8 @@
 .public-trust-badges {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 22px;
+  gap: 8px;
+  margin-bottom: 26px;
 }
 
 .public-trust-badges.compact {
@@ -668,19 +670,20 @@
 
 .public-trust-badges span {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 34px;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 9px 11px;
+  gap: 7px;
+  padding: 7px 10px;
   color: #1f2937;
   text-align: center;
-  background: #fff;
-  border: 1px solid rgba(201, 162, 39, 0.2);
-  border-radius: 999px;
-  box-shadow: 0 10px 26px rgba(31, 41, 55, 0.05);
-  font-size: 0.84rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 12px;
+  box-shadow: none;
+  font-size: 0.76rem;
   font-weight: 850;
+  line-height: 1.18;
 }
 
 .public-trust-badges svg {
