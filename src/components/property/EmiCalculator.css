@@ -1,0 +1,67 @@
+.emi-calculator {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+  padding: clamp(18px, 3vw, 26px);
+  background: #fff;
+  border: 1px solid rgba(31, 41, 55, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 16px 42px rgba(31, 41, 55, 0.07);
+}
+
+.emi-calculator h2 {
+  color: #1f2937;
+  font-family: "Playfair Display", serif;
+}
+
+.emi-calculator__grid,
+.emi-results {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.emi-calculator label {
+  display: grid;
+  gap: 7px;
+  color: #6b7280;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.emi-results article {
+  padding: 14px;
+  background: #faf9f6;
+  border: 1px solid rgba(31, 41, 55, 0.08);
+  border-radius: 14px;
+}
+
+.emi-results span,
+.emi-results strong {
+  display: block;
+}
+
+.emi-results span {
+  color: #6b7280;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.emi-results strong {
+  color: #1f2937;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .emi-calculator__grid,
+  .emi-results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .emi-calculator__grid,
+  .emi-results {
+    grid-template-columns: 1fr;
+  }
+}

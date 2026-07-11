@@ -1,0 +1,735 @@
+.luxury-home {
+  --lux-bg: #faf9f6;
+  --lux-primary: #1f2937;
+  --lux-gold: #c9a227;
+  --lux-gold-dark: #9b7a16;
+  --lux-text: #2b2b2b;
+  --lux-muted: #6b7280;
+  --lux-border: rgba(31, 41, 55, 0.1);
+  --lux-shadow: 0 20px 58px rgba(31, 41, 55, 0.11);
+  background: var(--lux-bg);
+  color: var(--lux-text);
+  overflow: hidden;
+}
+
+.luxury-home h1,
+.luxury-home h2,
+.luxury-home h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--lux-primary);
+}
+
+.luxury-home p {
+  color: var(--lux-muted);
+}
+
+.luxury-hero {
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding: 104px clamp(20px, 6vw, 92px) 138px;
+  isolation: isolate;
+}
+
+.luxury-hero > img,
+.luxury-final-cta > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.luxury-hero__overlay,
+.luxury-final-cta::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(12, 18, 28, 0.9) 0%, rgba(12, 18, 28, 0.62) 48%, rgba(12, 18, 28, 0.18) 100%),
+    linear-gradient(180deg, rgba(12, 18, 28, 0.22), rgba(12, 18, 28, 0.48));
+}
+
+.luxury-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) 340px;
+  gap: clamp(30px, 6vw, 78px);
+  align-items: center;
+}
+
+.luxury-hero__copy {
+  max-width: 760px;
+}
+
+.luxury-kicker {
+  margin-bottom: 16px;
+  color: var(--lux-gold) !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.luxury-hero h1 {
+  max-width: 700px;
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: clamp(1.8rem, 3.1vw, 3rem);
+  line-height: 1.06;
+}
+
+.luxury-hero__copy > p:not(.luxury-kicker) {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.75;
+}
+
+.luxury-actions,
+.luxury-trust-row,
+.luxury-invest-pills,
+.luxury-property-card__body div,
+.luxury-stars,
+.luxury-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.luxury-actions {
+  margin-top: 30px;
+}
+
+.luxury-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, border-color 220ms ease;
+}
+
+.luxury-button::after {
+  position: absolute;
+  inset: auto auto 50% 50%;
+  width: 0;
+  height: 0;
+  content: "";
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.32);
+  transform: translate(-50%, 50%);
+  transition: width 420ms ease, height 420ms ease;
+}
+
+.luxury-button:hover::after {
+  width: 220px;
+  height: 220px;
+}
+
+.luxury-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(31, 41, 55, 0.18);
+}
+
+.luxury-button--gold {
+  color: #1f2937;
+  background: var(--lux-gold);
+  border-color: var(--lux-gold);
+}
+
+.luxury-button--gold:hover {
+  background: var(--lux-gold-dark);
+  border-color: var(--lux-gold-dark);
+  color: #fff;
+}
+
+.luxury-button--glass {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(16px);
+}
+
+.luxury-button--outline {
+  color: var(--lux-primary);
+  background: transparent;
+  border-color: rgba(31, 41, 55, 0.22);
+}
+
+.luxury-trust-row {
+  margin-top: 24px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.luxury-trust-row span,
+.luxury-invest-pills span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.luxury-stat-cloud {
+  display: grid;
+  gap: 14px;
+}
+
+.luxury-glass-card {
+  padding: 20px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 20px 54px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(18px);
+  animation: luxuryFloat 5.5s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.luxury-glass-card:nth-child(even) {
+  margin-left: 32px;
+}
+
+.luxury-glass-card strong,
+.luxury-glass-card span {
+  display: block;
+}
+
+.luxury-glass-card strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.95rem;
+  line-height: 1;
+}
+
+.luxury-glass-card span {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.luxury-search-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: -92px auto 0;
+  padding: 0 clamp(18px, 4vw, 32px);
+}
+
+.luxury-search-card {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: 12px;
+  align-items: end;
+  padding: clamp(18px, 2.5vw, 26px);
+  border: 1px solid var(--lux-border);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--lux-shadow);
+}
+
+.luxury-search-card label {
+  display: grid;
+  gap: 8px;
+  color: var(--lux-muted);
+  font-size: 0.79rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.luxury-search-card input,
+.luxury-search-card select {
+  min-height: 48px;
+  border-radius: 999px;
+  border-color: rgba(31, 41, 55, 0.12);
+  background: #faf9f6;
+}
+
+.luxury-section {
+  padding: clamp(58px, 7vw, 96px) clamp(20px, 6vw, 72px);
+}
+
+.luxury-section > * {
+  width: 100%;
+  max-width: 1240px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.luxury-section__head {
+  max-width: 1240px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.luxury-section__head h2,
+.luxury-section__head p {
+  max-width: 720px;
+}
+
+.luxury-section__head h2,
+.luxury-invest h2,
+.luxury-final-cta h2 {
+  font-size: clamp(1.45rem, 2.25vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.luxury-category-grid,
+.luxury-value-grid,
+.luxury-featured-grid,
+.luxury-service-grid,
+.luxury-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.luxury-category-card,
+.luxury-property-card,
+.luxury-service-card,
+.luxury-testimonial-card,
+.luxury-value-card {
+  border: 1px solid var(--lux-border);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(31, 41, 55, 0.06);
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.luxury-category-card:hover,
+.luxury-property-card:hover,
+.luxury-service-card:hover,
+.luxury-testimonial-card:hover,
+.luxury-value-card:hover,
+.luxury-timeline-step:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201, 162, 39, 0.45);
+  box-shadow: 0 24px 58px rgba(31, 41, 55, 0.12);
+}
+
+.luxury-category-card,
+.luxury-service-card {
+  overflow: hidden;
+}
+
+.luxury-category-card img,
+.luxury-property-card__image img,
+.luxury-service-card img,
+.luxury-invest > img,
+.luxury-testimonial-card img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.luxury-category-card:hover img,
+.luxury-property-card:hover img,
+.luxury-service-card:hover img {
+  transform: scale(1.06);
+}
+
+.luxury-category-card img {
+  height: 220px;
+}
+
+.luxury-category-card div,
+.luxury-service-card div {
+  padding: 18px;
+}
+
+.luxury-category-card span,
+.luxury-service-card span,
+.luxury-link-button {
+  color: var(--lux-gold-dark);
+  font-size: 0.88rem;
+  font-style: normal;
+  font-weight: 850;
+}
+
+.luxury-category-card em,
+.luxury-link-button,
+.luxury-service-card span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.luxury-value-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.luxury-value-card {
+  padding: 20px;
+}
+
+.luxury-value-card svg {
+  color: var(--lux-gold-dark);
+}
+
+.luxury-value-card h3,
+.luxury-service-card h3,
+.luxury-property-card h3 {
+  font-size: 1.28rem;
+}
+
+.luxury-property-card {
+  overflow: hidden;
+}
+
+.luxury-property-card__image {
+  position: relative;
+  display: block;
+  height: 260px;
+  overflow: hidden;
+}
+
+.luxury-property-card__image span {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: #1f2937;
+  background: var(--lux-gold);
+  font-weight: 850;
+}
+
+.luxury-property-card__body {
+  padding: 20px;
+}
+
+.luxury-property-card__body > strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--lux-gold-dark);
+  font-size: 1.28rem;
+}
+
+.luxury-property-card__body p {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.luxury-property-card__body div {
+  margin: 14px 0 18px;
+}
+
+.luxury-property-card__body div span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--lux-muted);
+}
+
+.luxury-service-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.luxury-service-card img {
+  height: 210px;
+}
+
+.luxury-timeline {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.luxury-timeline-step {
+  position: relative;
+  padding: 18px;
+  border: 1px solid var(--lux-border);
+  border-radius: 18px;
+  background: #fff;
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.luxury-timeline-step:not(:last-child)::after {
+  position: absolute;
+  right: -17px;
+  top: 50%;
+  width: 18px;
+  height: 1px;
+  content: "";
+  background: var(--lux-gold);
+}
+
+.luxury-timeline-step div {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  color: var(--lux-primary);
+  background: rgba(201, 162, 39, 0.16);
+}
+
+.luxury-timeline-step span {
+  color: var(--lux-gold-dark);
+  font-weight: 850;
+}
+
+.luxury-invest {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(58px, 7vw, 96px) clamp(20px, 6vw, 72px);
+  background: #fff;
+}
+
+.luxury-invest > * {
+  min-width: 0;
+}
+
+.luxury-invest > img {
+  height: 520px;
+  border-radius: 24px;
+  box-shadow: var(--lux-shadow);
+}
+
+.luxury-invest-pills {
+  margin-top: 24px;
+}
+
+.luxury-invest-pills span {
+  padding: 10px 14px;
+  border: 1px solid var(--lux-border);
+  border-radius: 999px;
+  background: #faf9f6;
+}
+
+.luxury-testimonial-card {
+  padding: 22px;
+}
+
+.luxury-testimonial-card img {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+}
+
+.luxury-stars {
+  color: var(--lux-gold);
+  margin-bottom: 16px;
+}
+
+.luxury-testimonial-card strong,
+.luxury-testimonial-card span {
+  display: block;
+}
+
+.luxury-testimonial-card span {
+  color: var(--lux-muted);
+}
+
+.luxury-faq {
+  display: grid;
+  gap: 12px;
+}
+
+.luxury-faq article {
+  overflow: hidden;
+  border: 1px solid var(--lux-border);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.luxury-faq button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 17px 20px;
+  color: var(--lux-primary);
+  background: transparent;
+  border: 0;
+  font-weight: 850;
+  text-align: left;
+}
+
+.luxury-faq svg {
+  transition: transform 220ms ease;
+}
+
+.luxury-faq article.open svg {
+  transform: rotate(180deg);
+}
+
+.luxury-faq p {
+  display: none;
+  padding: 0 20px 18px;
+}
+
+.luxury-faq article.open p {
+  display: block;
+}
+
+.luxury-final-cta {
+  position: relative;
+  min-height: 440px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(58px, 7vw, 96px) clamp(20px, 6vw, 72px);
+  text-align: center;
+  isolation: isolate;
+}
+
+.luxury-final-cta div {
+  max-width: 740px;
+}
+
+.luxury-final-cta h2 {
+  color: #fff;
+}
+
+.luxury-final-cta .luxury-actions {
+  justify-content: center;
+}
+
+.fade-up {
+  animation: fadeUp 700ms ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxuryFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@media (max-width: 1180px) {
+  .luxury-hero__inner,
+  .luxury-invest {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-search-card,
+  .luxury-category-grid,
+  .luxury-featured-grid,
+  .luxury-testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .luxury-value-grid,
+  .luxury-service-grid,
+  .luxury-timeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .luxury-hero {
+    min-height: auto;
+    padding-top: 94px;
+    padding-bottom: 112px;
+  }
+
+  .luxury-hero h1 {
+    font-size: clamp(1.9rem, 8.5vw, 2.8rem);
+  }
+
+  .luxury-hero__copy > p:not(.luxury-kicker) {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .luxury-stat-cloud {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .luxury-glass-card {
+    padding: 16px;
+  }
+
+  .luxury-glass-card strong {
+    font-size: 1.55rem;
+  }
+
+  .luxury-glass-card:nth-child(even) {
+    margin-left: 0;
+  }
+
+  .luxury-search-wrap {
+    margin-top: -70px;
+  }
+
+  .luxury-search-card,
+  .luxury-category-grid,
+  .luxury-value-grid,
+  .luxury-featured-grid,
+  .luxury-service-grid,
+  .luxury-timeline,
+  .luxury-testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-timeline-step:not(:last-child)::after {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: -17px;
+    width: 1px;
+    height: 18px;
+  }
+
+  .luxury-invest > img {
+    height: 360px;
+  }
+
+  .luxury-actions,
+  .luxury-button {
+    width: 100%;
+  }
+
+  .luxury-final-cta .luxury-actions {
+    align-items: stretch;
+  }
+
+  .luxury-section,
+  .luxury-invest,
+  .luxury-final-cta {
+    padding-block: 56px;
+  }
+
+  .luxury-property-card__image,
+  .luxury-category-card img,
+  .luxury-service-card img {
+    height: 210px;
+  }
+}
+

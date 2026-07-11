@@ -1,0 +1,66 @@
+.turnkey-estimator-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 22px;
+  width: 100%;
+  max-width: 1240px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.turnkey-estimator-form,
+.turnkey-estimate-result {
+  background: #fff;
+  border: 1px solid rgba(31, 41, 55, 0.09);
+  border-radius: 18px;
+  box-shadow: 0 16px 42px rgba(31, 41, 55, 0.07);
+}
+
+.turnkey-estimator-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.turnkey-estimator-form label {
+  display: grid;
+  gap: 7px;
+  color: #6b7280;
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.turnkey-estimator-form .wide {
+  grid-column: 1 / -1;
+}
+
+.turnkey-estimate-result {
+  align-self: start;
+  display: grid;
+  gap: 12px;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.turnkey-estimate-result svg {
+  color: #c9a227;
+}
+
+.turnkey-estimate-result h2 {
+  color: #1f2937;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.5rem, 2.4vw, 2.35rem);
+}
+
+.turnkey-estimate-result .enquiry-form {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 980px) {
+  .turnkey-estimator-layout,
+  .turnkey-estimator-form {
+    grid-template-columns: 1fr;
+  }
+}

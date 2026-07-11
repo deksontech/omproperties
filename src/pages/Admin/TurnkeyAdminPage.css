@@ -1,0 +1,91 @@
+.turnkey-admin-page {
+  display: grid;
+  gap: 18px;
+}
+
+.turnkey-admin-page .admin-topline > span {
+  padding: 8px 12px;
+  color: var(--gold-dark);
+  background: var(--white);
+  border: 1px solid var(--line);
+  font-weight: 850;
+}
+
+.turnkey-admin-form,
+.turnkey-admin-list {
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 30px rgba(18, 17, 14, 0.06);
+}
+
+.turnkey-admin-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px;
+}
+
+.turnkey-admin-form__head {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.turnkey-admin-form__head h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.turnkey-admin-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.turnkey-admin-form .wide {
+  grid-column: 1 / -1;
+}
+
+.turnkey-admin-list {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+
+.turnkey-admin-row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+}
+
+.turnkey-admin-row img {
+  width: 92px;
+  height: 68px;
+  object-fit: cover;
+}
+
+.turnkey-admin-row span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 1040px) {
+  .turnkey-admin-form,
+  .turnkey-admin-row {
+    grid-template-columns: 1fr;
+  }
+
+  .turnkey-admin-row img {
+    width: 100%;
+    height: 220px;
+  }
+}

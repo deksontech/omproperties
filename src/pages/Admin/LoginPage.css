@@ -1,0 +1,41 @@
+.admin-auth-page {
+  min-height: 78vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 18px;
+  background:
+    linear-gradient(rgba(12, 18, 28, 0.74), rgba(12, 18, 28, 0.74)),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80") center / cover;
+}
+
+.admin-auth-card {
+  display: grid;
+  width: min(420px, 100%);
+  gap: 12px;
+  padding: clamp(20px, 3vw, 28px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.admin-auth-card h1 {
+  margin-bottom: 8px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.admin-auth-card label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.admin-auth-error {
+  margin: 0;
+  padding: 10px 12px;
+  color: #8a1f1f;
+  background: #fff1f1;
+  border: 1px solid #ffd0d0;
+  font-weight: 750;
+}
