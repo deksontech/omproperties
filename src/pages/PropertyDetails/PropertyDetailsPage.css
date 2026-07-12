@@ -185,6 +185,13 @@
   border: 0;
 }
 
+.video-tour video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .purpose-badge {
   display: inline-flex;
   padding: 8px 14px;

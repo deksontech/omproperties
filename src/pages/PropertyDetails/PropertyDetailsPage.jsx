@@ -307,7 +307,19 @@ function getVideoEmbedUrl(url) {
   }
 }
 
+const isVideoFile = (url = '') => /\.(mp4|webm|ogg)$/i.test(url)
+
 function VideoTour({ videoUrl, title }) {
+  if (isVideoFile(videoUrl)) {
+    return (
+      <DetailSection title="Video Tour">
+        <div className="video-tour">
+          <video src={videoUrl} title={`${title} video tour`} controls preload="metadata" />
+        </div>
+      </DetailSection>
+    )
+  }
+
   const embedUrl = getVideoEmbedUrl(videoUrl)
 
   if (!embedUrl) return null
@@ -322,6 +334,13 @@ function VideoTour({ videoUrl, title }) {
 }
 
 function PropertyOverview({ property }) {
+  const isPlotLike = property.type === 'Plots' || property.type === 'Commercial Lands'
+  const plotOverview = [
+    ['Plot Size', property.size, Ruler],
+    ['Launch Price', property.price, FileCheck2],
+    ['Property Type', property.type, Building2],
+    ['Status', property.possessionStatus || property.status || 'Available', ShieldCheck],
+  ]
   const overview = [
     ['Bedrooms', property.bedroomLabel || property.bedrooms || 'NA', BedDouble],
     ['Bathrooms', property.bathroomLabel || property.bathrooms || 'NA', Bath],
@@ -331,7 +350,7 @@ function PropertyOverview({ property }) {
 
   return (
     <section className="premium-overview-grid" aria-label="Property overview">
-      {overview.map(([label, value, Icon]) => (
+      {(isPlotLike ? plotOverview : overview).map(([label, value, Icon]) => (
         <article key={label}>
           <Icon size={24} />
           <span>{label}</span>

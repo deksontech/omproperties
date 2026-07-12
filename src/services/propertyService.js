@@ -33,6 +33,14 @@ const mergeSeedUpdates = (storedProperties) =>
       return normalizeProperty({ ...storedProperty, ...seedProperty, id: storedProperty.id })
     }
 
+    if (
+      storedProperty.slug === 'greenwood-city-bhiwadi-tijara-highway' &&
+      seedProperty &&
+      storedProperty.images?.includes('/properties/greenwood-city/payment-plan.jpeg')
+    ) {
+      return normalizeProperty({ ...storedProperty, ...seedProperty, id: storedProperty.id })
+    }
+
     return normalizeProperty(storedProperty)
   })
 
