@@ -7,7 +7,6 @@ import {
   Building2,
   CalendarCheck,
   Check,
-  Download,
   FileCheck2,
   MapPin,
   Ruler,
@@ -19,6 +18,7 @@ import { PropertyCard } from '../../components/property/PropertyCard'
 import { PropertyGallery } from '../../components/property/PropertyGallery'
 import { PropertyRail } from '../../components/property/PropertyRail'
 import { EnquiryForm } from '../../components/common/EnquiryForm'
+import { BrochureLeadCapture } from '../../components/common/BrochureLeadCapture'
 import { Breadcrumb } from '../../components/public/Breadcrumb'
 import { EmptyState } from '../../components/public/EmptyState'
 import { SiteVisitButton } from '../../components/public/SiteVisitButton'
@@ -233,13 +233,13 @@ export function PropertyDetailsPage() {
             <button className="button muted" type="button" onClick={shareProperty}>
               <Share2 size={16} /> Share Property
             </button>
-            {property.brochureUrl && (
-              <a className="button muted" href={property.brochureUrl} target="_blank" rel="noreferrer">
-                <Download size={16} /> Download Brochure
-              </a>
-            )}
           </div>
           {shareMessage && <p className="form-status success">{shareMessage}</p>}
+          <BrochureLeadCapture
+            brochureUrl={property.brochureUrl}
+            propertyName={property.title}
+            sourcePage={`/property/${property.slug}`}
+          />
           <EnquiryForm
             propertyName={property.title}
             source="Property Detail Page"

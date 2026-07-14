@@ -143,6 +143,42 @@
   white-space: nowrap;
 }
 
+.brochure-capture {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  background: #faf9f6;
+  border: 1px solid rgba(201, 162, 39, 0.24);
+  border-radius: 16px;
+}
+
+.brochure-capture > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.brochure-capture strong {
+  color: var(--detail-charcoal);
+}
+
+.brochure-capture span {
+  color: var(--detail-muted);
+  font-size: 0.85rem;
+}
+
+.brochure-capture input {
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--detail-text);
+  background: #fff;
+  border: 1px solid rgba(31, 41, 55, 0.12);
+  border-radius: 12px;
+}
+
+.brochure-capture.success {
+  background: rgba(201, 162, 39, 0.08);
+}
+
 .property-facts-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -1,6 +1,6 @@
 export const APP_CONFIG = {
   appName: import.meta.env.VITE_APP_NAME || 'OMProperties',
-  contactEmail: import.meta.env.VITE_CONTACT_EMAIL || 'info@omproperties.in',
+  contactEmail: import.meta.env.VITE_CONTACT_EMAIL || 'Omproperties0049@gmail.com',
   contactPhone: import.meta.env.VITE_CONTACT_PHONE || '+91 96942 60049',
   officeAddress:
     import.meta.env.VITE_OFFICE_ADDRESS ||

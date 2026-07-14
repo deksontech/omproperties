@@ -12,8 +12,10 @@ import { TurnkeyAdminPage } from './pages/Admin/TurnkeyAdminPage'
 import { ContactPage } from './pages/Contact/ContactPage'
 import { ComparePropertiesPage } from './pages/CompareProperties/ComparePropertiesPage'
 import { HomePage } from './pages/Home/HomePage'
+import { CookiePolicyPage } from './pages/CookiePolicy/CookiePolicyPage'
 import { InsightDetailsPage } from './pages/Insights/InsightDetailsPage'
 import { InsightsPage } from './pages/Insights/InsightsPage'
+import { LocationLandingPage } from './pages/Landing/LocationLandingPage'
 import { NotFoundPage } from './pages/NotFound/NotFoundPage'
 import { PropertiesPage } from './pages/Properties/PropertiesPage'
 import { PropertyDetailsPage } from './pages/PropertyDetails/PropertyDetailsPage'
@@ -38,6 +40,8 @@ function AppRoutes() {
         <Route path="/turnkey/:slug" element={<ServiceDetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+        <Route path="/locations/:slug" element={<LocationLandingPage />} />
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/insights/:slug" element={<InsightDetailsPage />} />
         <Route path="/admin/login" element={<LoginPage />} />

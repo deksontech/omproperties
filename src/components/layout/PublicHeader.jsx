@@ -9,7 +9,9 @@ import headerLogo from '../../assets/omproperties-logo-header.png'
 const propertyMenu = [
   ['Buy Property', 'Verified homes and investment assets', '/properties?purpose=buy'],
   ['Rent Property', 'Ready rental homes and workspaces', '/properties?purpose=rent'],
-  ['Villas', 'Premium independent villa residences', '/properties?type=villa'],
+  ['Bhiwadi Properties', 'Local flats, plots, and investments', '/locations/properties-in-bhiwadi'],
+  ['SH-25 Plots', 'Bhiwadi-Tijara highway launch options', '/locations/plots-on-bhiwadi-tijara-highway'],
+  ['Sector 16 Flats', 'Apartment projects in Bhiwadi', '/locations/flats-in-sector-16-bhiwadi'],
   ['Commercial', 'Retail, office, and land opportunities', '/properties?category=commercial'],
 ]
 

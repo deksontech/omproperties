@@ -10,9 +10,12 @@ const quickLinks = [
   ['Saved Properties', '/saved-properties'],
   ['Turnkey', '/turnkey'],
   ['Cost Estimator', '/turnkey-cost-estimator'],
+  ['Bhiwadi Properties', '/locations/properties-in-bhiwadi'],
+  ['SH-25 Plots', '/locations/plots-on-bhiwadi-tijara-highway'],
   ['Insights', '/insights'],
   ['About', '/about'],
   ['Contact', '/contact'],
+  ['Cookie Policy', '/cookie-policy'],
 ]
 
 const socialLinks = ['Instagram', 'Facebook', 'LinkedIn']
