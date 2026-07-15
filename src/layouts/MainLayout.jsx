@@ -5,6 +5,7 @@ import { PublicHeader } from '../components/layout/PublicHeader'
 import { CompareBar } from '../components/property/CompareBar'
 import { SiteVisitModal } from '../components/common/SiteVisitModal'
 import { CookieConsent } from '../components/public/CookieConsent'
+import { PrelaunchPlotPopup } from '../components/public/PrelaunchPlotPopup'
 import { StickyContactActions } from '../components/public/StickyContactActions'
 import { SiteVisitContext } from '../context/SiteVisitContext'
 
@@ -39,6 +40,7 @@ export function MainLayout() {
       <PublicFooter />
       <CompareBar />
       {!isContactPage && <StickyContactActions onSiteVisit={() => openSiteVisit({ sourcePage: pathname })} />}
+      <PrelaunchPlotPopup />
       <CookieConsent />
       <SiteVisitModal
         isOpen={siteVisit.isOpen}

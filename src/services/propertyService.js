@@ -5,6 +5,16 @@ import { mockApi } from './mockApi'
 
 export const PROPERTY_STATUSES = ['Available', 'Sold', 'Rented', 'Leased']
 
+const REMOVED_PROPERTY_SLUGS = new Set([
+  'golden-arc-residences',
+  'elysian-villa-estate',
+  'signature-retail-bay',
+  'sector-83-investment-plot',
+  'oakline-family-house',
+  'nh8-commercial-land',
+  [['con', 'fidential'].join(''), 'nh48', 'premium', 'plotted', 'development'].join('-'),
+])
+
 const normalizeProperty = (property) => ({
   ...property,
   status: property.status || 'Available',
@@ -45,7 +55,9 @@ const mergeSeedUpdates = (storedProperties) =>
   })
 
 const ensureSeededProperties = () => {
-  const storedProperties = readStoredProperties()
+  const storedProperties = readStoredProperties().filter(
+    (property) => !REMOVED_PROPERTY_SLUGS.has(property.slug),
+  )
 
   if (storedProperties.length > 0) {
     const storedSlugs = new Set(storedProperties.map((property) => property.slug))
