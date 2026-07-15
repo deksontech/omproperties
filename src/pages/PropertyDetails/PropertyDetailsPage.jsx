@@ -38,6 +38,7 @@ export function PropertyDetailsPage() {
   const { isSaved, toggleSaved } = useSavedProperties()
   const { isCompared, toggleCompare } = usePropertyCompare()
   const property = useMemo(() => properties.find((item) => item.slug === slug), [properties, slug])
+  const galleryImages = useMemo(() => property?.images?.slice(1) || [], [property])
   const { addRecentlyViewed, recentProperties } = useRecentlyViewed(properties, property?.id)
   const similarProperties = useMemo(
     () =>
@@ -143,7 +144,7 @@ export function PropertyDetailsPage() {
         </div>
       </section>
 
-      <PropertyGallery images={property.images} title={property.title} />
+      {galleryImages.length > 0 && <PropertyGallery images={galleryImages} title={property.title} />}
 
       <section className="premium-detail-layout">
         <article className="premium-detail-main">
