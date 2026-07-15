@@ -15,7 +15,6 @@ const quickLinks = [
   ['Insights', '/insights'],
   ['About', '/about'],
   ['Contact', '/contact'],
-  ['Cookie Policy', '/cookie-policy'],
 ]
 
 const socialLinks = ['Instagram', 'Facebook', 'LinkedIn']
